@@ -1,0 +1,109 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+{% endblock %}
+
+{% block content %}
+<div class="wrapperseccion">
+
+  <div id="head_inicio">
+    <div id="logo_inicio">
+    	<img src="{% static 'images/logo.png' %}">
+    </div>
+    <div id="flechadown">
+      <a href="#irportafolio">
+      	<div class="animate">
+      	   <img src="{% static 'images/flecha.png' %}">
+        </div>
+      </a>
+    </div>
+  </div><!--fin head inicio-->
+
+  <div id="irportafolio">
+    <div id="portafolio_inicio">
+      <div class="parallax"></div>
+    </div><!--fin portafolio_inicio-->
+
+    <div id="irport">
+      <div id="container_irport">
+        <p class="titulo negro">
+        Cualquier estilo,<br>
+        cualquier idea.
+        </p>
+        <p class="descripportafolio negro">
+        En <strong>Arkham Tattoo Studio</strong> me esfuerzo por realizar tatuajes de alta calidad, también ofrezco asesoría para aterrizar tus ideas, garantizando un diseño único, creado especialmente para ti.
+        </p>
+        <br>
+        <a href="{% url 'portfolio' %}"><div class="boton btnnegro"><p>VER PORTAFOLIO</p></div></a>
+      </div><!--fin container-->
+    </div><!--fin irport-->
+  </div><!--fin ir portafolio-->
+
+  <div id="bgnegro_1">
+    <div class="container1024">
+      <p class="titulo center blanco">¿Quieres un tatuaje?<br>
+      ¡Agendar tu cita es muy fácil!</p>
+      <div id="paso1">
+        <img src="{% static 'images/paso1.png' %}">
+        <p class="titulopaso">PASO 1:</p>
+        <a href="{% url 'quotation' %}"><div class="boton btnblanco"><p>COTIZACIÓN</p></div></a>
+        <div class="separador_pasos"></div>
+        <p class="cuerpo blanco">Platícame tu idea, y en menos de 24 horas te responderé con el costo y no. de horas para llevar a cabo tu tatuaje.
+        </p>
+      </div><!--fin paso1-->
+
+      <div id="paso2">
+        <img src="{% static 'images/paso2.png' %}">
+        <p class="titulopaso">PASO 2:</p>
+        <a href="?id=agendar"><div class="boton btnblanco"><p>AGENDAR CITA</p></div></a>
+        <div class="separador_pasos"></div>
+        <p class="cuerpo blanco">Ya que tengas tu cotización, proporciona tus datos y elige el día y hora que mejor te convenga.
+        </p>
+      </div><!--fin paso2-->
+
+      <div id="paso3">
+        <img src="{% static 'images/paso3.png' %}">
+        <p class="titulopaso">PASO 3:</p>
+        <div class="boton btnblanco"><p>¡ASISTE A TU CITA!</p></div>
+        <div class="separador_pasos"></div>
+        <p class="cuerpo blanco">Te estaré esperando para atenderte de la mejor manera.
+        </p>
+      </div><!--fin paso3-->
+
+    </div><!--fin container1024-->
+  </div><!--fin bgnegro1-->
+
+  <div id="comentariomapa">
+
+    <div id="dudaocomentario" class="parallax2"  data-stellar-background-ratio="0">
+      <div class="contdudacoment">
+        <p class="titulo blanco">¿Dudas<br>o comentarios?</p>
+        <br>
+        <a href="{% url 'contact' %}"><div class="boton btnblanco"><p>ENVIAR MENSAJE</p></div></a>
+        <br><br><br>
+        <p class="cuerpo blanco">Sigue mi trabajo en redes sociales:</p>
+        <div class="separador_pasos"></div>
+        <a href="https://www.facebook.com/ArkhamTattooEns/" target="_blank"><img src="{% static 'images/fb.png' %}"></a>
+        <a href="https://www.instagram.com/arkham_tattoo_studio/" target="_blank"><img src="{% static 'images/ig.png' %}"></a>
+      </div>
+    </div><!--fin duda o comentario-->
+
+    <div id="mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1694.394035497133!2d-116.59452478997126!3d31.857981761677234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d88d92e09fe5a9%3A0x98ea621fe5412c93!2sArkham+Studio+Tattoo!5e0!3m2!1sen!2smx!4v1512789459720" width="100%" height="450"  frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <br clear="all"/ class="bye2">
+
+  </div>
+
+</div><!--fin wrapper seccion-->
+{% endblock %}
+
+{% block extrajs %}
+  <script src="{% static 'js/jquery.smooth-scroll.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+      $('#flechadown a').smoothScroll();
+    });
+  </script>
+{% endblock %}

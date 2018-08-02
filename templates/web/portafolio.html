@@ -1,0 +1,40 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+{% endblock %}
+
+{% block content %}
+<div class="wrapperseccion portafolio">
+  <div id="header_portafolio">
+    <div id="texto_portafolio">
+      <div id="wrapper_headportafolio">
+        <p class="titulo blanco">Luis Hernandez</p>
+        <p class="titulochico blanco">(Pinche Guasón)</p>
+        <br>
+        <p class="cuerpo blanco">Bienvenido a mi portafolio, como podrás observar, no manejo un estilo en específico, pues me gusta mantenerme abierto a cualquier pedido de mis clientes.<br>
+        <br>
+        En Arkham Tattoo Studio lo más importante es dedicarle a tu tatuaje el tiempo necesario, me gusta mantener un ambiente profesional y ameno para que tu experiencia de tatuaje sea excelente. Ya sea el primero o uno mas a la cuenta, así mismo desde que se desarrolla tu idea hasta finalizar con el proyecto.
+        </p>
+      </div>
+    </div>
+  </div><!--fin header-->
+
+  <div class="container1024">
+    <p class="sigue blanco">Sigue mi trabajo en redes sociales:</p>
+    <a href="https://www.facebook.com/ArkhamTattooEns/" target="_blank"><img src="{% static 'images/fb.png' %}"></a>
+    <a href="https://www.instagram.com/arkham_tattoo_studio/" target="_blank"><img src="{% static 'images/ig.png' %}"></a>
+    <a data-fancybox data-src="#preguntas"><div class="boton btnblanco flright"><p class="btnfooter">PREGUNTAS FRECUENTES</p></div></a>
+    <br><br>
+    <div id="portafolio_instagram">
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-391f19cc-ae0d-4830-955d-5e11c5da838c"></div>
+    </div>
+  </div><!--fin container 1024-->
+
+</div><!--fin wrapper seccion-->
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}

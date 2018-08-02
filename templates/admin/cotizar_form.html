@@ -1,0 +1,73 @@
+{% extends 'admin/admin_index.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+  <div class="row">
+    <!-- Left Cotizacion Info -->
+    <div class="col-sm-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <p class="imglist">
+                {% if quotation.referencia1 %}
+                  <a href="{{ quotation.referencia1.url }}" data-fancybox="images">
+                    <img src="{{ quotation.referencia1.url }}" width="50%" height="50%"/>
+                  </a>
+                {% else %}
+                    <h3>No image to display</h3>
+                {% endif %}
+                {% if quotation.referencia2 %}
+                  <a href="{{ quotation.referencia2.url }}" data-fancybox="images">
+                    <img src="{{ quotation.referencia2.url }}" width="50%" height="50%"/>
+                  </a>
+                {% endif %}
+                {% if quotation.referencia3 %}
+                  <a href="{{ quotation.referencia3.url }}" data-fancybox="images">
+                    <img src="{{ quotation.referencia3.url }}" width="50%" height="50%"/>
+                  </a>
+                {% endif %}
+              </p>
+            </div>
+        </div>
+    </div>
+    <!-- right cotizacion Info -->
+    <div class="col-sm-12 col-md-8">
+      <h1>{{ quotation.nombre }}</h1>
+      <br>
+
+      <p>Zona: {{ quotation.zona}}</p>
+      <p>Colores: {{ quotation.tinta}}</p>
+      <p>Posicion: {{ quotation.posicion}}</p>
+      <p class="forma">Tamaño: Alto {{ quotation.alto }}cm, Ancho {{ quotation.ancho }}cm </p>
+      <p>Descripcion: {{ quotation.descripcion }}</p>
+
+      <form id="cotizar_forma" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label class="col-form-label" for="inputDefault">{{ form.correo.label }}</label>
+        <p>{{ form.correo }}</p>
+        <label class="col-form-label" for="inputDefault">{{ form.no_horas.label }}</label>
+        <p>{{ form.no_horas }}</p>
+        <label class="col-form-label" for="inputDefault">{{ form.anticipo.label }}</label>
+        <p>{{ form.anticipo }}</p>
+        <label class="col-form-label" for="inputDefault">{{ form.precioTotal.label }}</label>
+        <p>{{ form.precioTotal }}</p>
+        <label class="col-form-label" for="inputDefault">{{ form.comentarios.label }}</label>
+        <p>{{ form.comentarios }}</p>
+        <button type="submit" value="Update" class="btn btn-primary">Enviar cotización</button>
+      </form>
+      <br>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+{% endblock %}

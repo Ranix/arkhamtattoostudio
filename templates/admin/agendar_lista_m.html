@@ -1,0 +1,50 @@
+{% extends 'admin/admin_index.html' %}
+{% load staticfiles %}
+{% load tz %}
+
+{% block content %}
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+      <h2>Citas de Mes</h2>
+    </div>
+    <div class="col">
+      <button onclick="location.href={% url 'cita_lista_d' %}" type="button" class="btn btn-primary">Citas: Hoy</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Comienza</th>
+        <th scope="col">Termina</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+        {% for citas in object_list %}
+        <tr>
+          <td>{{ citas.dia|timezone:"America/Ensenada" }}</td>
+          <td>{{ citas.start }}</td>
+          <td>{{ citas.end }}</td>
+          <td>{{ citas.cliente }}</td>
+          <td>{{ citas.cliente.correo }}</td>
+          <td>{{ citas.descripcion }}</td>
+          <td><a class="btn btn-danger" href="{% url 'cita_delete' citas.id %}">Eliminar</a></td>
+        </tr>
+      {% endfor %}
+    {% else %}
+    <br>
+    <h1>No hay citas pendientes!</h1>
+    <br>
+    {% endif %}
+    </tbody>
+  </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,238 @@
+{% extends 'web/index.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+
+<style>
+.alert {width: 100%;
+	height: 30px;
+	text-align:center;
+	color:#000;
+	background:#fff;
+	padding-top:13px;
+	position:absolute;
+	z-index:999;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: #000;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: #fff;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="wrapperseccion">
+  <div id="header_agendar">
+
+    <!--Success message-->
+		{% if messages %}
+			<div class="alert">
+				{% for message in messages %}
+				<p{% if message.tags == "success" %} class="closebtn" onclick="this.parentElement.style.display='none';"{% endif %}>{{ message }}</p>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+    <div id="texto_cotizar">
+    <div id="wrapper_headcotizar">
+      <p class="titulo blanco">Rápido y fácil.</p>
+      <p class="cuerpo blanco">Utiliza esta herramienta para agendar tu cita.</p>
+    </div>
+    </div>
+  </div>
+
+  <div id="agendacalendario">
+    <div class="container1024">
+      <div id="formaagendar">
+        <p class="titulo_agendar">Agéndate:</p>
+				<form id="agendar_forma" method='POST' enctype="multipart/form-data" onsubmit="return checkCheckBox(this)">
+          {% csrf_token %}
+          <p class="titulo_cotizar">Datos de contacto:</p>
+
+          {{ form.nombre.errors }}
+					<p class="forma">{{ form.nombre.label }}</p>
+          <p class="caja">{{ form.nombre }}</p>
+          {{ form.edad.errors }}
+          <p class="forma">Edad: (No tatúo a menores de edad)</p>
+          <p class="caja">{{ form.edad }}</p>
+          {{ form.telefono.errors }}
+          <p class="forma">Teléfono:</p>
+          <p class="caja">{{ form.telefono }}</p>
+          {{ form.correo.errors }}
+          <p class="forma">Correo electrónico:</p>
+          <p class="caja">{{ form.correo }}</p>
+          <br>
+          <p class="titulo_cotizar">Datos de cotización:</p>
+          <p class="forma">Breve descripción del tatuaje a realizar:</p>
+					<p class="caja">{{ form2.descripcion }}</p>
+          <p class="titulo_cotizar">Selecciona la hora y el día que mejor se te acomode*:</p>
+					<p class="forma">Fecha</p>
+          <input id="id_dia" name="dia" type="date" class="caja">
+          <br>
+          <br>
+					<p class="forma">Inicio de cita</p>
+          <select id="id_start" name="start" class="caja"></select>
+					<br>
+					<br>
+					<p class="forma">Fin de cita</p>
+					<select id="id_end" name="end" class="caja"></select>
+          <br>
+          <p class="titulo_cotizar">Forma de pago:</p>
+					<p class="forma">Para agendar un cita se requiere un aticipo. Selecione el metodo de pago.</p>
+          <br>
+					<p class="caja">{{ form3.tipo_pago  }}</p>
+					<br>
+					<p class="forma">Cantidad:</p>
+					<p class="caja">{{ form3.cantidad  }}</p>
+					<br>
+					<div id="paypal-button-container"></div>
+          <p class="forma inline">Transferencia bancaria:</p><br>
+          <p class="forma">Datos: Banco BBVA Bancomer<br>No. cuenta: 4152 3131 6484 6433<br>CLABE: 012022001989729901</p>
+          <br>
+          <div id="atencion">
+            <p class="titulo_atencion">ATENCIÓN:</p>
+            <p class="forma inline">Es importante que conozcas los términos y condiciones de Arkham Tattoo Studio. Para leerlos da</p> <a data-fancybox="modal" data-src="#terminos" href="javascript:;"><p class="forma inline"><strong>CLICK AQUÍ.</strong></p></a><br>
+            <input id="agree" type="checkbox" class="inline" value="acepto"><p class="forma inline">He leído y acepto los términos y condiciones</p>
+          </div>
+          <br>
+          <button type="submit" onClick="check_agree(this.form)" class="caja3">Agendar mi cita</button>
+        </form>
+      </div><!--fin forma agendar-->
+
+      <div id="derechaagendar">
+        <p class="titulo_agendar">Calendario de trabajo:</p>
+        <div id="calendario">
+          <div id="mes">
+            <div class="leftcalendario"><p class="flechas"></p></div>
+            <div class="nombremes">{{ month_name }}</div>
+            <div class="rightcalendario"><p class="flechas"></p></div>
+          </div>
+          <table id="semana">
+            <thead>
+              <th class="dia left">D</th>
+              <th class="dia border">L</th>
+              <th class="dia border">M</th>
+              <th class="dia border">M</th>
+              <th class="dia border">J</th>
+              <th class="dia border">V</th>
+              <th class="dia border">S</th>
+            </thead>
+            <tbody>
+              {% for week in month %}
+                <tr class="semana">
+                  {% for days, occurrences in week %}
+                    {% if days == 0 %}
+                      <td class="dia_color gris"></td>
+                    {% else %}
+                      <td class="dia_color gris"> {{ days }} </td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div><!--fin calendario-->
+
+        <div id="relaciondias">
+        <div class="colordia verde"></div><div class="descripcion">Día totalmente disponible.</div><br>
+        <div class="colordia rojo"></div><div class="descripcion">Día totalmente ocupado.</div><br>
+        <div class="colordia amarillo"></div><div class="descripcion">Día con poca disponibilidad o con pendientes de aprobación.</div><br>
+        <div class="colordia gris"></div><div class="descripcion">Cerrado o Mes diferente.</div><br>
+        <br clear="all"/>
+        </div>
+        <br><br><br>
+        <img src="{% static 'images/foto-agendar.png' %}">
+      </div> <!--fin derecha agendar calendario-->
+      <br clear="all"/>
+    </div>
+  </div>
+</div><!--fin wrapper seccion-->
+{% endblock content %}
+
+{% block extrajs %}
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<script>
+$("#id_dia").change(function(){
+	var dia = $("#id_dia").val()
+	$("#id_start").empty()
+	$("#id_end").empty()
+	$.ajax({
+		url: "http://127.0.0.1:8000/api/freehours/" + dia + "/",
+		type: "GET",
+		dataType: "json",
+		success : function(dates){
+			$.each(dates,function(index, obj){
+				$("#id_start").append('<option>' + obj + '</option>');
+				$("#id_end").append('<option>' + obj + '</option>');
+			});
+		}
+	});
+});
+
+$('#agendar_forma').submit(function(event){
+    if($('#agree').is(':checked') == false){
+        event.preventDefault();
+        alert("Acepte los términos y condiciones para agendar su cita");
+        return false;
+    }
+});
+
+$("#id_tipo_pago").change(function(){
+	if($(this).val() == 'Paypal'){
+		paypal.Button.render({
+
+        // Set your environment
+
+        env: 'sandbox', // sandbox | production
+
+        // Specify the style of the button
+
+        style: {
+            label: 'checkout',
+            size:  'small',    // small | medium | large | responsive
+            shape: 'pill',     // pill | rect
+            color: 'gold'      // gold | blue | silver | black
+        },
+
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+        client: {
+            sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+            production: '<insert production client id>'
+        },
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '0.01', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                window.alert('Payment Complete!');
+            });
+        }
+
+    }, '#paypal-button-container');
+	}
+});
+</script>
+{% endblock %}

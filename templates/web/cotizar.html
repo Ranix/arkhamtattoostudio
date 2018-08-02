@@ -1,0 +1,119 @@
+{% extends 'web/index.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+<style>
+.alert {width: 100%;
+	height: 30px;
+	text-align:center;
+	color:#000;
+	background:#fff;
+	padding-top:13px;
+	position:absolute;
+	z-index:999;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: #000;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: #fff;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="wrapperseccion">
+
+	<div id="header_cotizar">
+
+		<!--Success message-->
+		{% if messages %}
+			<div class="alert">
+				{% for message in messages %}
+				<p{% if message.tags == "success" %} class="closebtn" onclick="this.parentElement.style.display='none';"{% endif %}>{{ message }}</p>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<div id="texto_cotizar">
+				<div id="wrapper_headcotizar">
+				<p class="titulo blanco">Para tu comodidad.</p>
+				<p class="cuerpo blanco">Utiliza esta herramienta de cotización y en menos de
+			24 horas recibirás una respuesta con el costo y no. de horas para que puedas agendar tu cita.</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="formulario_zonas">
+		<div id="container_cotizacion">
+			<div id="formulario">
+				<form id="cotizar_forma" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<p class="titulo_cotizar">Datos de contacto:</p>
+					<p class="forma">{{ form.nombre.label }}</p>
+					<p class="caja">{{ form.nombre }}</p>
+
+					<p class="forma">{{ form.telefono.label }}</p>
+					<p class="caja">{{ form.telefono }}</p>
+
+					<p class="forma">{{ form.correo.label }}</p>
+					<p class="caja">{{ form.correo }}</p>
+					<br>
+					<p class="titulo_cotizar">Sobre el tatuaje:</p>
+					<p class="forma">{{ form.zona.label}}</p>
+					<p class="forma">{{ form.zona }}</p>
+
+					<p class="forma">{{ form.posicion.label }}</p>
+					<p class="forma">{{ form.posicion}}</p>
+
+					<p class="forma">{{ form.tinta.label }}</p>
+					<p class="forma">{{ form.tinta}}</p>
+
+					<p class="forma">Tamaño en centímetros:</p>
+					<p class="forma inline">{{ form.alto.label }}</p>
+					<p class="forma inline">{{ form.alto }}</p>
+					<p class="forma inline">{{ form.ancho.label }}</p>
+					<p class="forma inline">{{ form.ancho }}</p>
+					<br><br>
+
+					<p class="forma">Referencias:</p>
+					<p class="chico">Para tener una idea más clara sobre tu tatuaje envíame referencias en la que quieras basarte para que se diseñe y/o adapten para tu tatuaje. </p>
+					<br>
+					<p>{{ form.referencia1 }}</p>
+					<p>{{ form.referencia2 }}</p>
+					<p>{{ form.referencia3 }}</p>
+					<br>
+					<p class="forma">Descripción del tatuaje:</p>
+					<p class="chico">Sé que un tatuaje es algo complejo de explicar en unas cuantas
+					opciones, por lo que por favor utiliza este campo para platicarme tu idea y así poder darte una cotización lo más acertada posible.</p>
+					<br>
+					<p>{{ form.descripcion }}</p>
+					<br><br>
+					<button type="submit" class="caja3">Solicitar cotización</button>
+					<br><br>
+				</form>
+			</div><!--formulario-->
+
+			<div id="zonas">
+				<div id="diagrama">
+					<p class="zona">ZONAS:</p>
+					<img src="{% static 'images/zonas.png' %}">
+				</div>
+				<img class="logocotizar" src="{% static 'images/logo.png' %}">
+			</div>
+			<br clear="all"/>
+
+	 </div><!--fin container cotizaciones-->
+	</div><!--fin formulario_zonas-->
+	<div id="corteabajo"></div>
+	<div id="footer_cotizar">
+</div><!--fin wrapper seccion-->
+{% endblock content %}

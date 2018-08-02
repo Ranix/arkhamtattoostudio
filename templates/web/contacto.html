@@ -1,0 +1,92 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block extracss %}
+{% endblock %}
+
+{% block content %}
+<div class="wrapperseccion">
+  <div id="header_contacto">
+    <div class="container1024">
+      <div id="texto_contacto">
+        <p class="titulo blanco">
+        ¿Dudas<br>o comentarios?
+        </p>
+        <p class="cuerpo blanco">
+        La opinión de mis clientes es lo más importante, Si tienes un mensaje para mi, no dudes en enviarlo.
+        <br><br>
+        También te invito a revisar las preguntas frecuentes, las recomendaciones después de hacerte un tatuaje, y los términos y condiciones de Arkham Tattoo Studio.
+        </p>
+        <br>
+        <a data-fancybox data-src="#preguntas"><div class="boton btnblanco"><p class="btnfooter">PREGUNTAS FRECUENTES</p></div></a><br><br>
+        <a data-fancybox data-src="#recomendaciones"><div class="boton btnblanco height2"><p class="btnfooter">RECOMENDACIONES POST-TATUAJE</p></div></a><br><br>
+        <a data-fancybox data-src="#terminos"><div class="boton btnblanco"><p class="btnfooter">TÉRMINOS Y CONDICIONES</p></div></a>
+      </div>
+      <div id="forma_contacto">
+        <form>
+          <p class="forma">Nombre:</p>
+          <input type="text" class="caja">
+          <p class="forma">Correo electrónico:</p>
+          <input type="text" class="caja">
+          <p class="forma">Mensaje:</p>
+          <textarea class="cajatext"></textarea>
+          <input type="submit" value="Enviar" class="cajacontacto">
+        </form>
+        <br clear="all"/>
+      </div>
+    </div>
+  </div><!--fin header-->
+
+  <div id="bgnegro_2">
+    <div class="container1024">
+      <div id="ubicacion">
+        <p class="titulo blanco">Ubicación</p>
+        <p class="cuerpo blanco">
+        ¡Es muy fácil llegar!
+        <br>
+        Dirección:
+        <br>
+        Av. 16 de Septiembre #281, Ampliación Buenaventura.
+        <br><br>
+        El local se encuentra a casi esquina con calle México. Una calle arriba de la Av. Diamante.</p>
+        <br>
+        <p class="cuerpo blanco">
+        Sigue mi trabajo en redes sociales:</p>
+        <a href="https://www.facebook.com/ArkhamTattooEns/" target="_blank"><img src="{% static 'images/fb.png' %}"></a>
+        <a href="https://www.instagram.com/arkham_tattoo_studio/" target="_blank"><img src="{% static 'images/ig.png' %}"></a>
+        <br clear="all"/>
+      </div><!--fin ubicacion-->
+
+      <div id="horario_contactame">
+        <p class="titulo blanco">Horario</p>
+        <p class="cuerpo blanco">
+        Lunes a Viernes de 11am a 7pm<br>
+        Sábado de 11am a 3pm<br>
+        Domingo sólo por cita.
+        </p>
+        <br><br>
+        <p class="titulo blanco">
+        Contáctame</p>
+        <p class="cuerpo blanco">
+        Si me llamas y no contesto debe ser porque
+        estoy tatuando, por favor envíame un mensaje
+        para responderte en cuanto termine.
+        <br><br>
+        Luis Hernández - (646) 189.5450<br>
+        </p>
+      </div><!--fin horario-contactame-->
+      <br clear="all"/>
+    </div><!--fin container 1024-->
+  </div><!--fin bgnegro-->
+
+  <div id="corteabajo2"></div>
+
+  <div id="mapa_contacto">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1694.394035497133!2d-116.59452478997126!3d31.857981761677234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d88d92e09fe5a9%3A0x98ea621fe5412c93!2sArkham+Studio+Tattoo!5e0!3m2!1sen!2smx!4v1512789459720" width="100%" height="500"  frameborder="0" style="border:0" allowfullscreen></iframe>
+
+  </div>
+</div><!--fin wrapper seccion-->
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}

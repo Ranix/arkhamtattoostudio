@@ -1,0 +1,345 @@
+body, html, h1, h2, h3, h4, h5, h6, p {margin:0px;	padding:0px;}
+
+a {color:inherit; text-decoration:none;border:none;}
+img {border:0px;}
+body{font-size: 12pt;
+	font-family: 'Crimson Text', serif;
+}
+
+.inline {display:inline;}
+.middle {vertical-align:middle;}
+textarea {resize:none;}
+.hola {display:none;}
+p {font-family: 'Montserrat', sans-serif;}
+
+header {width:100%;height:90px;background:#1a1a1a;padding-top:15px;text-align: center;z-index:999;position:relative;}
+#menu {width:100%;height:80px;background:url(../images/bg-menu.png)repeat-x bottom;z-index:999;position:relative;}
+.contmenu {width:480px;margin:auto;}
+.btn_menu {padding:5px;float:left;width:auto;border:1px solid #1a1a1a;}
+.margleft {margin-left:5px;}
+.btn_menu:hover {border:1px solid #fff;}
+.btnmenu {font-size:14px;color:#fff;}
+
+footer {width:100%;height:105px;background:#1a1a1a;}
+.wrapperfooter {width:1024px;height:auto;margin:auto;padding-top:40px;}
+#mid, #right {float:left;display:inline-block;margin-left:140px;}
+#left {float:left;display:inline-block;}
+.btn_footer {border:1px solid #fff;padding:5px;height:13px;cursor:pointer;}
+
+.wrapperseccion {width:100%;height:auto;margin-top:-34px;}
+
+
+/*INICIO*/
+#head_inicio {width:100%;height:674px;background:url(../images/head_inicio.png)no-repeat bottom;background-size:cover;position:relative;z-index:998;margin-top:-100px;}
+#irportafolio {width:100%;height:540px;position:relative;margin-top:-110px;z-index:990;}
+#bgnegro_1 {width:100%;height:665px;background:url(../images/bgnegro1.png)no-repeat;background-size:cover;padding-top:90px;text-align:center;position:relative;margin-top:-120px;z-index:998;}
+#comentariomapa {width:100%;height:450px;position:relative;margin-top:-110px;z-index:990;}
+
+
+#logo_inicio {margin-left:auto;margin-right:auto;padding-top:8%;width:380px;height:260px;}
+#flechadown {margin-left:auto;margin-right:auto;margin-top:80px;width:64px;height:39px;position:relative;cursor:pointer;}
+
+
+.animate {  animation: MoveUpDown 1s linear infinite;position:absolute;}
+
+@keyframes MoveUpDown {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 15px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+#portafolio_inicio {float:left;width:50%;height:540px;}
+
+.parallax {width:100%;height:540px;background:url(../images/parallax1.jpg)no-repeat left;background-size:51%;background-attachment:fixed;}
+
+#irport {width:50%;float:left;height:540px;background:url(../images/bg2.jpg)no-repeat center;background-size:cover;}
+#container_irport {width:450px;padding-top:150px;padding-left:10%;height:auto;text-align:left;}
+p.titulo {font-size:36px;	font-family: 'Crimson Text', serif;line-height:36px;font-weight:bold;}
+.negro {color:#000;}
+.blanco {color:#fff;}
+
+.descripportafolio {font-size:16px;padding-top:20px;}
+
+.boton {width:auto;height:auto;padding:5px;display:inline-block;cursor:pointer;}
+.boton p {font-family: 'Crimson Text', serif;font-weight:bold;padding-top:3px;}
+.btnnegro {border:solid 1px #000;color:#000;}
+.btnblanco {border:solid 1px #fff;color:#fff;}
+.btnnegro:hover {border:solid 1px #fff;background:#000;color:#fff;}
+.btnblanco:hover {border:solid 1px #000;background:#fff;color:#000;}
+
+.container1024 {width:1024px;margin:auto;padding-top:50px;}
+
+#paso1, #paso2, #paso3 {width:30%;height:330px;float:left;margin-top:70px;}
+#paso2, #paso3 {margin-left:5%;}
+
+.titulopaso {font-size:20px;font-weight:bold;color:#fff;padding-bottom:5px;padding-top:5px;}
+.separador_pasos {height:15px;width:1px;}
+
+#dudaocomentario {float:left;width:50%;height:450px;}
+.parallax2 {width:50%;height:450px;background:url(../images/parallax2.jpg)no-repeat;background-size:51%;background-attachment:fixed;}
+
+.contdudacoment {width:280px;height:260px;padding-top:130px;padding-left:15%;}
+#mapa {float:left;width:50%;height:450px;}
+
+
+/*COTIZAR*/
+
+#header_cotizar {width:100%;height:348px;background:url(../images/head_cotizacion.png)no-repeat bottom;background-size:cover; position:absolute;}
+#texto_cotizar {width:1024px;margin:auto;height:auto;text-align:left;padding-top:6%}
+#wrapper_headcotizar{width:450px;position:relative;height:348px;}
+
+#formulario_zonas {width:100%;height:auto;padding-top:240px;background:#1a1a1a;}
+#formulario {width:50%;float:left;}
+#cotizar_forma {width:90%;padding-top:103px;}
+p.titulo_cotizar {font-size:25px;font-weight:bold;color:#fff;font-family: 'Crimson Text', serif;padding-top:30px;padding-bottom:17px;}
+p.forma {font-size:15px;color:#fff;padding-top:3px;padding-bottom:3px;}
+p.chico {font-size:13px;color:#fff;font-style:italic;}
+.caja {width:100%;height:25px;background:#58595b;color:#000;border:none;}
+
+.caja2 {width:95%;height:170px;background:#58595b;border:none;padding:2%;}
+.caja4 {color:#fff;width:100%;}
+.caja5 {width:60px;height:24px;background:#58595b;border:none;margin-left:5px;margin-right:5px;}
+.caja3 {width:auto;display:inline-block;border:1px solid #fff;padding:5px;height:50px;font-size:25px;text-align:center;background:#1a1a1a;font-family: 'Crimson Text', serif;line-height:35px;color:#fff;font-weight:bold;}
+.caja3:hover {border:1px solid #000;background:#fff;color:#000;cursor:pointer;}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #212121;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #212121;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #212121;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #212121;
+}
+
+#zonas {width:50%;height:auto;float:left;padding-top:120px;text-align:center;}
+#container_cotizacion{width:1024px;margin:auto;}
+#diagrama {background:url(../images/bg2.jpg)no-repeat center;background-size:cover;width:512px;height:688px;text-align:center;margin-bottom:65px;}
+p.zona {font-size:25px;font-weight:bold;font-family:'Crimson Text',serif;padding-top:35px;padding-left:50px;text-align:left;}
+#corteabajo {width:100%;height:115px;background:url(../images/corte_abajo.png)no-repeat bottom;background-size:cover;position:relative;z-index:998;}
+
+
+#footer_cotizar {width:100%;height:430px;background:url(../images/parallax3.jpg)no-repeat;background-size:cover;background-attachment:fixed;position:relative;margin-top:-107px;}
+
+
+/*AGENDAR*/
+#header_agendar {width:100%;height:348px;background:url(../images/head_agendar.jpg)no-repeat bottom;background-size:cover; position:relative;}
+#agendacalendario {width:100%;height:auto;background:#1a1a1a;}
+.titulo_atencion {font-size:20px;color:#fff;font-family:'Crimson Text',serif;font-weight:bold;}
+#atencion {width:92%;height:auto;padding:4%;border:2px solid #fff;}
+
+#formaagendar {width:49%;float:left;padding-bottom:50px;}
+#derechaagendar {width:49%;float:right;}
+#derechaagendar img {width:100%;}
+p.titulo_agendar {font-size:25px;font-weight:bold;color:#fff;font-family: 'Crimson Text', serif;}
+
+
+#calendario {width:100%;height:auto;}
+#mes {width:99%;height:60px;border:2px solid #fff;}
+.leftcalendario {width:15%;height:60px;float:left;}
+.nombremes {width:70%;text-align:center;float:left;font-size:38px;color:#fff;font-weight:bold;font-family: 'Crimson Text', serif;padding-top:13px;}
+.rightcalendario {width:15%;height:60px;float:right;}
+.flechas {font-size:45px;color:#fff;text-align:center;}
+#semana {width:100%;height:56px;}
+.dia {width:14%;float:left;height:45px;font-size:35px;color:#fff;font-family: 'Crimson Text', serif;font-weight:bold;text-align:center;padding-top:10px;}
+.dia_color {width:14%;float:left;height:70px;}
+.left {border-left:1px solid #fff;border-bottom:1px solid #fff;border-right:1px solid #fff;}
+.border {border-right:1px solid #fff;border-bottom:1px solid #fff;}
+.leftblack {border-left:1px solid #000;border-bottom:1px solid #000;border-right:1px solid #000;}
+.borderblack {border-right:1px solid #000;border-bottom:1px solid #000;}
+.semana {width:100%;height:70px;}
+
+.amarillo {background:#e49f39;}
+.verde {background:#3d8028;}
+.rojo {background:#991623;}
+.gris {background:#404041;}
+
+#relaciondias {width:100%;height:auto;margin-top:30px;}
+.colordia {width:15%;height:25px;float:left;margin-top:10px;}
+.descripcion {width:82%;height:20px;float:right;margin-top:10px;font-size:12px;color:#fff;font-family: 'Montserrat', sans-serif;padding-top:5px;}
+
+
+
+/*PORTAFOLIO*/
+
+#header_portafolio {width:100%;height:575px;background:#1a1a1a url(../images/head_portfolio.jpg)no-repeat bottom;background-size:cover; }
+#texto_portafolio {width:1024px;margin:auto;height:auto;text-align:left;padding-top:8%}
+#wrapper_headportafolio {width:454px;height:348px;}
+
+.titulochico {font-size:25px;font-weight:bold;font-family: 'Crimson Text', serif;}
+
+.portafolio {background:#1a1a1a;}
+.flright {float:right;}
+
+/*CONTACTO*/
+#header_contacto {width:100%;height:550px;background:url(../images/parallax4.jpg)no-repeat top;background-size:cover;padding-top:50px;background-attachment:fixed;}
+#texto_contacto {float:left;width:40%;}
+
+#forma_contacto {width:50%;float:right;}
+.cajacontacto  {width:auto;display:inline-block;border:1px solid #fff;padding:5px;height:43px;font-size:25px;text-align:center;font-family: 'Crimson Text', serif;line-height:35px;color:#fff;font-weight:bold;background:transparent;float:right;margin-top:15px;}
+.cajacontacto:hover {border:1px solid #000;color:#000;cursor:pointer;background:#fff;}
+.cajatext {width:96%;border:none;background:#58595b;padding:2%;height:90px;}
+
+
+#bgnegro_2 {width:100%;height:auto;background:url(../images/bgnegro2.png)no-repeat top;background-size:cover;padding-top:120px;padding-bottom:50px;margin-top:-120px;}
+
+#ubicacion {width:40%;float:left;height:auto;}
+#horario_contactame {width:40%;float:left;margin-left:10%;}
+#corteabajo2 {width:100%;height:115px;background:url(../images/corte_abajo2.png)no-repeat bottom;background-size:cover;position:relative;z-index:998;}
+
+#mapa_contacto {width:100%;height:500px;margin-top:-115px;}
+
+
+
+/*INFORMACION FOOTER*/
+p.titulo_info {font-size:40px;font-family:'Crimson Text',serif;color:#1a1a1a;font-weight:bold;text-align:center;padding-top:20px;line-height:40px;}
+p.pregunta {font-size:15px;color:#000;}
+p.respuesta {font-size:12px;color:#000;}
+#izq_terminos {float:left;width:45%;margin-left:2%;text-align:justify;}
+#derterminos {float:right;width:45%;margin-right:2%;text-align:justify;}
+ol {font-size:15px;font-family:'Montserrat';color:#1a1a1a;padding-left:10px;}
+
+@media screen and (max-width:1082px){
+.wrapperfooter {width:100%;padding-top:13px;}
+footer {height:auto;padding-bottom:35px;}
+#left, #mid, #right {float:none;width:100%;margin-left:0px;text-align:center;}
+#mid, #right {margin-top:5px;}
+
+.parallax {    background: url(../images/parallax1-resp.jpg)no-repeat center;
+    background-size: cover;background-attachment:initial;height:300px;}
+
+.container1024 {width:90%;}
+#formaagendar {width:100%;float:none;}
+#derechaagendar {width:100%;float:none;}
+.dia, .dia_color {width:14%;}
+
+#container_irport {width:85%;}
+#logo_inicio{padding-top:105px}
+
+#texto_portafolio {width:90%;}
+
+#portafolio_inicio {width:100%;float:none;height:300px;}
+#container_irport {padding-top:40px;}
+#irportafolio {height:670px}
+#irport {width:100%;float:none;height:300px;padding-bottom:100px;}
+
+}
+
+@media screen and (max-width:1050px){
+#wrapper_headcotizar {margin:auto;}
+#container_cotizacion {width:95%;}
+#diagrama {width:100%;height:auto;}
+#texto_cotizar {width:100%;padding-top:10%;}
+#footer_cotizar {background-attachment:initial;}
+#header_contacto {background-attachment:initial;}
+}
+
+
+@media screen and (max-width:870px){
+#texto_contacto {float:none;width:100%;}
+#forma_contacto {float:none;width:100%;margin-top:30px;}
+#header_contacto {height:auto;padding-bottom:150px;}
+}
+
+@media screen and (max-width:775px){
+#zonas img.logocotizar {width:100%;}
+#texto_cotizar {padding-top:15%;}
+
+#paso1, #paso2, #paso3 {width:100%;float:none;margin-top:30px;height:auto;}
+#paso2, #paso3 {margin-left:0px;}
+#bgnegro_1 {height:auto;padding-bottom:140px;padding-top:100px;margin-top:-100px;background: url(../images/bgnegro1.png)no-repeat right;    background-size: cover;}
+
+#comentariomapa {height:auto;}
+#dudaocomentario {width:100%;height:auto;padding-bottom:50px;float:none;}
+#mapa {width:100%;float:none;}
+.bye2 {display:none;}
+.parallax2 {    background: url(../images/parallax2-resp.jpg)no-repeat center;
+    background-size: cover;
+    background-attachment: initial;}
+    #recomendaciones p.titulo_info {font-size:35px;}
+
+}
+
+@media screen and (max-width:700px){
+.dia, .dia_color {width:14%;}
+
+}
+
+@media screen and (max-width:690px){
+.contdudacoment {width:85%;margin:auto;padding-left:0px;}
+}
+
+@media screen and (max-width:600px){
+#formulario {width:100%;}
+#zonas {width:100%;}
+#izq_terminos {float:none;width:100%;margin-left:0%;}
+#derterminos {float:none;width:100%;margin-right:0%;}
+#terminos p.subtitulo_info {font-size:13px;}
+#recomendaciones p.titulo_info {font-size:25px;}
+ol {font-size:14px;}
+}
+
+@media screen and (max-width:520px){
+#ubicacion {width:100%;float:none;}
+#horario_contactame {width:100%;margin-left:0px;float:none;margin-top:40px;}
+}
+
+@media screen and (max-width:500px){
+.hola {display:block;}
+.bye {display:none;}
+#panel {display:none;width:100%;background:#1a1a1a;}
+#flip {width:30px;height:20px;margin-bottom:0px;margin-left:auto;margin-right:auto;cursor:pointer;padding-bottom:15px;}
+.btnmenu_resp {width:100%;padding-bottom:10px;text-align:center;padding-top:10px;}
+.sep_responsive {width:80%;height:1px;background:#fff;margin:auto;}
+#wrapper_headcotizar {width:80%;padding-top:15%;}
+
+#header_agendar {background: url(../images/head_agendar.jpg)no-repeat left bottom;
+    background-size: cover;}
+
+#irport {height:340px;}
+#irportafolio {height:760px;}
+
+#head_inicio {height:415px;}
+#logo_inicio {width:70%;}
+#logo_inicio img {width:100%;}
+
+#flechadown {display:none;}
+
+#wrapper_headportafolio {width:100%;}
+
+
+}
+
+@media screen and (max-width:460px){
+.dia, .dia_color {width:13.9%;}
+
+#mes {width:100%;}
+.nombremes {font-size:25px;}
+.dia {font-size:25px;height:46px;}
+.semana {height:71px;}
+#semana {height:57px;margin-top:1px;}
+#recomendaciones p.titulo_info {line-height:25px;}
+
+}
+
+@media screen and (max-width:460px){
+
+p.titulo {font-size:30px;}
+}
+
+@media screen and (max-width:320px){
+#head_inicio {height:300px}
+}
+
+@media screen and (max-width:303px){
+.height2 {height:30px;}
+footer {height:125px;}
+}

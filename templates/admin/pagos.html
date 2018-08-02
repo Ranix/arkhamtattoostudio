@@ -1,0 +1,41 @@
+{% extends 'admin/admin_index.html' %}
+{% load staticfiles %}
+{% load tz %}
+
+{% block content %}
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+      <h2>Pagos</h2>
+      <br>
+      <a href="{% url 'export_pagos_csv' %}">Exportar los pagos del mes</a>
+      <br>
+      <br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th spcope="col">Tipo de pago</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if object_list %}
+            {% for pago in object_list %}
+            <tr>
+              <td>{{ pago.tipo_pago }} </td>
+              <td>{{ pago.fecha|timezone:"America/Ensenada" }}</td>
+              <td>{{ pago.cita.cliente.nombre }}</td>
+              <td>{{ pago.cantidad }}</td>
+            </tr>
+            {% endfor %}
+          {% endif %}
+
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'admin/admin_index.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro: {{ object.nombre }}?</h3>
+	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+	<a class= "btn btn-default" href="{% url 'cotizar_lista' %}">Cancelar</a>
+</form>
+{% endblock %}

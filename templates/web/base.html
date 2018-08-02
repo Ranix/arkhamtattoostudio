@@ -1,0 +1,275 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Arkham Tattoo Studio - Ensenada B.C. México</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+    {% block extracss %}
+    {% endblock %}
+  </head>
+  <body>
+
+    {% block navbar %}
+    <header>
+    	<div id="logo">
+    		<img src="{% static 'images/logo_horizontal.png' %}">
+    	</div>
+    </header>
+    <div id="menu">
+      	<div class="contmenu bye">
+          <a href="{% url 'home' %}"><div class="btn_menu"><p class="btnmenu">HOME</p></div></a>
+          <a href="{% url 'portfolio' %}"><div class="margleft btn_menu"><p class="btnmenu">PORTAFOLIO</p></div></a>
+          <a href="{% url 'quotation' %}"><div class="margleft btn_menu"><p class="btnmenu">COTIZAR</p></div></a>
+          <a href="{% url 'appointment' %}"><div class="margleft btn_menu"><p class="btnmenu">AGENDAR CITA</p></div></a>
+          <a href="{% url 'contact' %}"><div class="margleft btn_menu"><p class="btnmenu">CONTACTO</p></div></a>
+        </div>
+
+      <div id="menuresponsive" class="hola">
+        	<div id="flip"><img src="{% static 'images/botonmenu.png' %}"></div>
+        	<div id="panel" class="infofooter">
+        		<a href="{% url 'home' %}"><div class="btnmenu_resp"><p class="btnmenu">HOME</p></div></a>
+            <div class="sep_responsive"></div>
+        		<a href="{% url 'portfolio' %}"><div class="btnmenu_resp"><p class="btnmenu">PORTAFOLIO</p></div></a>
+            <div class="sep_responsive"></div>
+        		<a href="{% url 'quotation' %}"><div class="btnmenu_resp"><p class="btnmenu">COTIZAR</p></div></a>
+            <div class="sep_responsive"></div>
+        		<a href="{% url 'appointment' %}"><div class="btnmenu_resp"><p class="btnmenu">AGENDAR CITA</p></div></a>
+            <div class="sep_responsive"></div>
+        		<a href="{% url 'contact' %}"><div class="btnmenu_resp"><p class="btnmenu">CONTACTO</p></div></a>
+        	</div>
+      </div>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+      <div class="wrapperfooter">
+      	<a data-fancybox data-src="#recomendaciones"><div id="left"><div class="boton btnblanco height2"><p class="btnfooter">RECOMENDACIONES POST-TATUAJE</p></div></div></a>
+      	<a data-fancybox data-src="#terminos"><div id="mid"><div class="boton btnblanco"><p class="btnfooter">TÉRMINOS Y CONDICIONES</p></div></div></a>
+      	<a data-fancybox data-src="#preguntas"><div id="right"><div class="boton btnblanco"><p class="btnfooter">PREGUNTAS FRECUENTES</p></div></div></a>
+      </div>
+    </footer>
+
+    <div style="display:none" id="preguntas">
+      <p class="titulo_info">Preguntas Frecuentes</p>
+      <br>
+      <div id="izq_terminos">
+        <p class="subtitulo_info"><strong>Sobre los servicios</strong></p>
+        <br>
+        <p class="pregunta">¿Haces perforaciones?</p>
+        <p class="respuesta">No, Arkham Tattoo Studio es exclusivo de tatuajes, pero te recomiendo a mis colegas de "Por Siempre" o "Pixan Studio".</p>
+        <br>
+        <p class="pregunta">¿Haces tatuajes de Henna?</p>
+        <p class="respuesta">No, no sabría en donde hacen tatuajes de henna en Ensenada, B.C.</p>
+        <br>
+        <p class="pregunta">¿Quitas tatuajes?</p>
+        <p class="respuesta">No, el proceso para quitar un tatuaje debe hacerse en una clínica láser, desconozco si en Ensenada existe algún lugar que ofrezca este servicio.</p>
+        <br>
+        <p class="pregunta">¿Cubres tatuajes?</p>
+        <p class="respuesta">Si, para poder cotizar el cubrimiento de un tatuaje al momento de que el cliente realice su solicitud de cotización, deberá adjuntar en las referencias su tatuaje actual, complementando en la caja de comentarios con el tamaño que tiene en centímetros, largo por ancho.</p>
+        <br>
+        <p class="subtitulo_info"><strong>Sobre las cotizaciones</strong></p>
+        <br>
+        <p class="pregunta">¿Cuánto cuesta un tatuaje?</p>
+        <p class="respuesta">El costo varía dependiendo de la complejidad del diseño deseado, así como el área total a tatuar, es por esto que al momento de cotizar se piden referencias, zona del cuerpo donde estará el tatuaje, medidas del tatuaje deseado en cm. Y una descripción con las palabras del cliente de lo que desea.
+        <br>
+        Sin embargo, cuando el diseño es muy detallado o abarca un área grande (como podría ser desde media manga, manga completa, espalda completa, entre otros), no se puede determinar con certeza el número de sesiones u horas de trabajo, por lo que se cobrará $500.00 por hora (siendo 3 horas el mínimo para agendar). Cuando este sea el caso, se le informará al cliente a través de la cotización.</p>
+        <br>
+        <p class="pregunta">¿Qué pasa si quiero un diseño original?</p>
+        <p class="respuesta">Cuando el cliente desee un diseño original, es importante que al momento de pedir una cotización, se envíen referencias y se explique dentro del campo de comentarios lo que se desea. El diseño se realizará en presencia del cliente el día de su cita. ¿Por qué? Esto se hace así para que el proceso de diseño sea más rápido, pues trabajar presencialmente con el cliente permite modificaciones instantáneas así como la discusión de las ideas del cliente y la interpretación de estas por parte del tatuador.</p>
+        <br>
+        <p class="pregunta">Me gustaría que mi diseño se hiciera antes del día de mi cita, ¿se puede?</p>
+        <p class="respuesta">Si el cliente desea tener una sesión exclusivamente para crear su diseño, previa a su cita, tendrá costo extra determinado por la duración de la sesión.</p>
+        <br>
+        <p class="pregunta">Ya envié mi solicitud para cotizar un tatuaje, ¿en cuanto tiempo me responderán?</p>
+        <p class="respuesta">Una vez enviada la información, el cliente recibirá un correo electrónico con su cotización en un periodo de 24 horas.</p>
+        <br>
+        <p class="pregunta">Soy menor de edad, ¿Me puedo tatuar?</p>
+        <p class="respuesta">Un cliente menor de edad debe asistir acompañado por su padre, madre o tutor legal. Los datos de cotización y datos para agendar deben estar a nombre del adulto responsable, el cual deberá presentar identificación oficial así como si debida copia por ambos lados.
+        <br>
+        Si el menor llega solo, no se tatuará aun cuando hallan agendado y perderán el anticipo, pues se tomará como una inasistencia.</p>
+        <br>
+      </div>
+      <div id="derterminos">
+        <p class="subtitulo_info"><strong>Sobre la forma de agendar</strong></p>
+        <br>
+        <p class="pregunta">¿Cómo me agendo si en mi cotización no me especificaron un número de horas?</p>
+        <p class="respuesta">Si en la cotización dice que ese diseño se cobrará por hora (la hora cuesta $500 pesos) y el presupuesto del cliente es de $2,500, el cliente puede agendar hasta 5 horas (siendo 3 horas el mínimo). El día de su cita se le especificará al cliente un aproximado de cuánto tiempo o sesiones más serán necesarias para completar.</p>
+        <br>
+        <p class="pregunta">¿Cuánto es el mínimo de horas que puedo agendar por cita?</p>
+        <p class="respuesta">Si la cotización no especifica un número, y se cobrará por hora, se deben agendar como mínimo 3 horas. </p>
+        <br>
+        <p class="pregunta">¿Puedo agendar todas mis sesiones a la vez?</p>
+        <p class="respuesta">Si tu tatuaje será de 2 o más sesiones, se debe de agendar cada una por separado</p>
+        <br>
+        <p class="pregunta">¿Cuáles son las formas de pago?</p>
+        <p class="respuesta">Aceptamos efectivo, depósitos, transferencia y Paypal. en caso de pagar en efectivo no se aceptan denominaciones menores a monedas de $10 pesos.<br><br>
+        Datos para depósito:<br>
+        BBVA Bancomer<br>
+        No. cuenta: 4152 3131 6484 6433<br>
+        CLABE: 012022001989729901</p>
+        <br>
+        <p class="pregunta">Tuve un imprevisto y necesito cancelar o reagendar, ¿Qué pasa con mi anticipo?</p>
+        <p class="respuesta">Si el cliente desea cancelar o re agendar, debe de hacerlo a más tardar el día anterior a su cita, dentro del horario de la tienda (Lunes a Sábado de 11am a 7pm.) De lo contrario no se devolverá el anticipo y para reagendar deberá volver a pagar.</p>
+        <br>
+        <p class="subtitulo_info"><strong>Durante la cita.</strong></p>
+        <br>
+        <p class="pregunta">¿Qué pasa si llego tarde?</p>
+        <p class="respuesta">El cliente cuenta con 15 minutos de tolerancia, los cuales pueden ser extendidos a máximo 30 minutos si se pone en contacto para avisar por cualquier imprevisto.</p>
+        <br>
+        <p class="pregunta">¿Puedo comer mientras me tatúan?</p>
+        <p class="respuesta">No, no se permiten alimentos dentro del estudio, sólo se permiten bebidas embotelladas no alcohólicas. </p>
+        <br>
+        <p class="pregunta">¿Cuántos acompañantes puedo llevar?</p>
+        <p class="respuesta">Se permite como máximo un solo acompañante por persona dentro del estudio, si asisten más se les pedirá esperar en el recibidor. Leer punto #9 de TÉRMINOS Y CONDICIONES</a></p>
+        <br>
+        <p class="subtitulo_info"><strong>Sobre el tatuaje.</strong></p>
+        <br>
+        <p class="pregunta">¿Cuentan con algún tipo de garantía?</p>
+        <p class="respuesta">En caso de que el cliente requiera un retoque a pesar de haber seguido todas las indicaciones y consejos proporcionados el día de su cita, Arkham Tattoo Studio cubrirá el retoque de la pieza como garantía. Este retoque se debe agendar personalmente para poder revisar el estado del tatuaje y no tendrá costo alguno.
+        <br>
+        Arkham Tattoo Studio no se hace responsable de cualquier resultado por consecuencia de no seguir las indicaciones de cuidado proporcionadas.</p>
+        <br>
+        <p class="pregunta">Necesito un retoque, ¿puedo aprovechar para hacer una modificación mínima?</p>
+        <p class="respuesta">El retoque no incluye modificaciones por más mínimas que sean, ya que antes de comenzar a tatuar, se le pide al cliente que revise y apruebe su diseño o stencil para evitar errores, de igual forma al finalizar se le pide que lo revise para informar de cualquier inconformidad en el momento. Si el cliente quiere una modificación durante su cita de retoque, tendrá costo extra. </p>
+        <br>
+      </div>
+      <br clear="all"/>
+      <strong>Si tienes alguna duda que no fue mencionada aquí, te invito a leer los TÉRMINOS Y CONDICIONES, si tu duda sigue sin ser respondida, llama o envía un mensaje y te responderé a la brevedad posible.</strong>
+    </div>
+
+    <div style="display:none" id="recomendaciones">
+      <div id="izq_terminos">
+        <p class="titulo_info">Recomendaciones post-tatuaje</p>
+        <ol>
+        <li>Limpiarse las manos antes de tener contacto directo con el tatuaje</li><br>
+        <li>Mantenerlo humectado por dos semanas, sin saturarlo</li><br>
+        <li>Limpiar el tatuaje tres veces al día con agua fría (el agua caliente puede escocer)</li><br>
+        <li>No exponer el tatuaje al sol</li><br>
+        <li>No rascar ni rozar la herida</li><br>
+        <li>No secar con toallas</li><br>
+        <li>No cubrir con plástico la herida si la piel no está bien seca después del lavado.</li><br>
+        <li>Utilizar la crema indicada y ninguna otra.</li><br>
+        <li>Si el tatuaje se realiza en una extremidad inferior (piernas o pies) no permanecer de pie durante más de dos horas seguidas.</li><br>
+        <li>Si se realiza en las extremidades superiores (manos) deberá tener en cuenta que se corre un riesgo más elevado de una infección y otros problemas causados por los roces y el contacto.</li><br>
+        <li>No consumir drogas ni ingerir alcohol durante el proceso de cicatrización.</li><br>
+        <li>Acudir el día indicado para la revisión.</li><br>
+        <li>No piscinas, aguas termales, jacuzzi, playa, etc. Por un mínimo de dos semanas</li><br>
+        <li>No carne de puerco o mariscos por un mínimo de dos semanas.</li>
+        </ol>
+      </div>
+      <div id="derterminos">
+        <p class="titulo_info">Proceso de curación</p>
+        <br><p class="pregunta">Por favor, asegúrate de que entiendes que el proceso de curación, es crucial para que sane apropiadamente.<strong> Si no tratas bien tu tatuaje durante este tiempo, podrás experimentar problemas tales como infecciones o pérdidas de color. </strong> Es necesario comprender las etapas de  curación del tatuaje y llevar a cabo los consejos de cuidado posterior. El tiempo total de curación para la mayoría de los tatuajes es de dos a tres semanas.</p>
+        <br>
+        <p style="pregunta"><strong>Procesos durante la curación:</strong></p>
+        <p class="pregunta">
+        <strong>-Primera etapa</strong><br>
+        Durante esta etapa notarás la zona de tu tatuaje hinchada y roja en los bordes. En algunos casos es posible, incluso, encontrar moretones alrededor de la zona. <br>
+        Esto es totalmente normal e indica que el tatuaje está sanando. La formación de costra significa falta de humectación; en caso de que se formara no se debe remover. Limítate a usar jabón neutro para limpiar la zona y usar crema hidratante adecuada durante esta etapa para estimular la curación y prevenir infección.
+        <br><br>
+        <strong>-Segunda etapa</strong><br>
+        La segunda etapa del proceso de curación del tatuaje es, por lo general, cuando la gente empieza a notar comezón en la zona tatuada. Esta etapa dura aproximadamente una semana. Aunque podría ser molesto, un tatuaje que da comezón indica que tu piel se está recuperando de forma natural. Hay que resistir y evitar el rascado, ya que al hacerlo puede terminar dañando los colores o incluso la forma de tu tatuaje.
+        <br>
+        La regeneración de tu piel tardará aproximadamente una semana en finalizar. De uno a cuatro días después comienza de nuevo la comezón, la piel empieza a descarapelarse y esto hace que la comezón se agudice. Como no podrás rascarte, puedes aliviarla y reducir la descamación con la aplicación de una crema hidratante adecuada, ya sea Lubriderm tapón azul o Bepanthen.
+        <br><br>
+        <strong>-Tercera y última etapa</strong>
+        <br>
+        En la etapa final del proceso de curación del tatuaje, ya estará prácticamente curado. Todavía verás algunas capas de piel sin sanar, pero, desaparecerán pronto. Recuerda que la tinta de tu tatuaje se encuentra en una capa profunda de piel, por lo que pasará un tiempo hasta que los colores se vean vibrantes. Esto es normal en la etapa final de la curación.
+      </div>
+    </div>
+
+    <div style="display:none" id="terminos">
+      <p class="titulo_info">Términos y condiciones</p>
+      <br><p class="subtitulo_info" style="text-align:center;"><strong>
+      Es importante que leas todos y cada uno de los puntos presentados a continuación antes de agendar tu cita en Arkham Tattoo Studio, el desconocimiento de cualquiera de los términos y condiciones mencionados no exime su cumplimiento, y se da por hecho que el cliente está de acuerdo con todos y cada uno al momento de dar click en el botón de agendar cita.
+      </strong></p>
+      <br>
+      <div id="izq_terminos">
+        <p class="pregunta"><strong>1 Generalidades</strong></p>
+        <p class="respuesta">Los términos y condiciones generales se aplican a todo servicio entre Arkham Tattoo studio y el cliente, que se hagan efectivos a través del sistema de cotizaciones y agendar cita en la página web www.ArkhamTattoStudio.com así como físicamente en el establecimiento de dicha tienda la cual su domicilio es 16 de septiembre No. 280 de la colonia bahía sur. Se aplicará en cada caso la versión válida en el momento.</respuesta>
+        <br><br>
+        <p class="pregunta"><strong>2 Costos del tatuaje</strong></p>
+        <p class="respuesta">Ofrecemos al cliente la posibilidad de cotizar en la tienda online, mediante un cuestionario. Dicha información se utilizará para facilitar y agilizar la respuesta del costo y tiempo que duraría su sesión.<br><br>
+        Asi mismo si deseas cubrir un tatuaje, se pide enviar en la solicitud de cotización una fotografía del tatuaje a cubrir, así como especificar su medida en cm en la caja de descripción de tatuaje.
+        <br><br>
+        El costo y tiempo varía dependiendo de la complejidad del diseño deseado, así como el área total a tatuar. Sin embargo, cuando el diseño es muy detallado o abarca un área grande (como podría ser desde media manga, manga completa, espalda completa, entre otros), no se puede determinar con certeza el número de sesiones u horas de trabajo, por lo que se cobrará $500.00 por hora, siendo 3 horas el tiempo mínimo por sesión. Cuando este sea el caso, se le informará al cliente a través de la cotización.
+        <br><br>
+        Es importante que la información enviada por el cliente sea lo más clara y precisa posible para que el proceso sea fácil y rápido. En caso de que algo no quede claro, se utilizará el teléfono o correo electrónico proporcionado por el cliente para resolver cualquier duda.
+        <br><br>
+        Una vez enviada la información, el cliente recibirá un correo electrónico con su cotización en un periodo de 24 horas.
+        </p>
+        <br>
+        <p class="pregunta"><strong>3 Creación diseño original</strong></p>
+        <p class="respuesta">Cuando el cliente desee un diseño original, es importante que al momento de pedir una cotización, se envíen referencias y se explique dentro del campo de comentarios lo que se desea.
+        <br><br>
+        El diseño se realizará en presencia del cliente el día de su cita. ¿Por qué? Esto se hace así para que el proceso de diseño sea más rápido, pues trabajar presencialmente con el cliente permite modificaciones instantáneas así como la discusión de las ideas del cliente y la interpretación de estas por parte del tatuador.
+        <br><br>
+        Si el cliente desea tener una sesión exclusivamente para crear su diseño, previa a su cita, tendrá costo extra determinado por la duración de la sesión.
+        </p>
+        <br>
+        <p class="pregunta"><strong>4 Agendar</strong></p>
+        <p class="respuesta">Al momento de agendar una cita, el sistema de Arkham Tattoo Studio no permitirá seleccionar días u horas que ya se encuentren ocupados, ni fuera del horario de la tienda, tampoco múltiples citas (si tu tatuaje será de 2 o más sesiones, se debe de agendar cada una por separado).
+        <br><br>
+        En caso de tener un diseño complejo o extenso que se cotizó por hora y/o en más de una sesión, el cliente debe agendar las horas que pueda pagar de acuerdo a su presupuesto.
+        <br><br>
+        Por ejemplo: Si en la cotización dice que ese diseño se cobrará por hora (la hora cuesta $500 pesos) y el presupuesto del cliente es de $2,500, el cliente puede agendar hasta 5 horas (siendo 3 horas el mínimo). El día de su cita se le especificará al cliente un aproximado de cuánto tiempo o sesiones más serán necesarias para completar.
+        </p><br>
+        <p class="pregunta"><strong>5 Formas de pago</strong></p>
+        <p class="respuesta">Se acepta efectivo, depósitos, transferencia y Paypal. El pago total del trabajo debe de cubrirse al finalizar con el tatuaje, en caso de pagar en efectivo no se aceptan denominaciones menores a monedas de $10 pesos.</p>
+      </div>
+      <div id="derterminos">
+        <p class="pregunta"><strong>6 Cancelar o Reagendar cita</strong></p>
+        <p class="respuesta">Si el cliente desea cancelar o re agendar, debe de hacerlo a más tardar el día anterior a su cita, dentro del horario de la tienda (Lunes a Sábado de 11am a 7pm.) De lo contrario no se devolverá el anticipo y para reagendar deberá volver a pagar. Es importante respetar el tiempo del tatuador, ya que al no avisar con anticipación significa pérdida para la tienda. Arkham Tattoo Studio se reserva el derecho de admisión a clientes con múltiples faltas sin aviso.</p>
+        <br>
+        <p class="pregunta"><strong>7 Menores de Edad </strong>
+        <p class="respuesta">Un cliente menor de edad debe asistir acompañado por su padre, madre o tutor legal. Los datos de cotización y datos para agendar deben estar a nombre del adulto responsable, el cual deberá presentar identificación oficial así como su debida copia por ambos lados.<br><br>
+        Si el menor llega solo, no se tatuará aun cuando hallan agendado y perderán el anticipo, pues se tomará como una inasistencia.</p>
+        <br>
+        <p class="pregunta"><strong>8 El día de tu cita:</strong></p>
+        <p class="respuesta">Si tu sesión durará varias horas es recomendable que comas antes, pues no se permiten alimentos dentro del estudio, sólo se permiten bebidas embotelladas no alcohólicas. Debes traer ropa cómoda o acorde al área que será tatuada y rasurar o depilar el área a tatuar.
+        <br>
+        El cliente cuenta con 15 minutos de tolerancia, los cuales pueden ser extendidos a máximo 30 minutos si se pone en contacto para avisar por cualquier imprevisto.
+        </p><br>
+        <p class="pregunta"><strong>9 Acompañantes:</strong></p>
+        <p class="respuesta">Se permite como máximo un solo acompañante por persona dentro del estudio, si asisten más se les pedirá esperar en el recibidor. No se permite comer dentro del estudio, en caso de querer traer bebidas, estas deben ser embotelladas y sin alcohol. El cliente será responsable de cualquier daño a muebles o aparatos causados por su acompañante. En caso de que el acompañante desee disfrutar de su música o videos desde su propio dispositivo electrónico, deberá utilizar audífonos.<br>
+        No se permiten niños ni mascotas.</p>
+        <br>
+        <p class="pregunta"><strong>10 Tatuaje</strong></p>
+        <p class="respuesta">Antes y después de realizar el tatuaje se le explicarán al cliente los métodos de cuidado y se le darán consejos para obtener el mejor resultado posible. Sin embargo, Arkham Tattoo Studio no se hace responsable de cualquier resultado por consecuencia de no seguir las indicaciones de cuidado proporcionadas. También pueden consultar los métodos de cuidado <a href="http://arkhamtattoostudio.com/nueva/#modal-1">AQUÍ.</a>
+        <br><br>
+        En caso de que el cliente requiera un retoque a pesar de haber seguido todas las indicaciones y consejos, Arkham Tattoo Studio cubrirá el retoque de la pieza como garantía. Este retoque se debe agendar personalmente para poder revisar el estado del tatuaje y no tendrá costo alguno.
+        <br><br>
+        El retoque no incluye modificaciones por más mínimas que sean, ya que antes de comenzar a tatuar, se le pide al cliente que revise y apruebe su diseño o stencil para evitar errores, de igual forma al finalizar se le pide que lo revise para informar de cualquier inconformidad en el momento. Si el cliente quiere una modificación durante su cita de retoque, tendrá costo extra.
+        Una vez que el cliente haya abandonado las instalaciones, si requiere de algún retoque fuera de la garantía o desea hacer una modificación, deberá repetir el proceso de cotización y agendar cita.</p>
+        </p><br>
+        <p class="pregunta"><strong>11 Clientes frecuentes:</strong></p>
+        <p class="respuesta">En Arkham Tattoo Studio nos gusta confiar en nuestros clientes. Aquellos que tienen ya tiempo asistiendo al establecimiento y nunca han presentado problemas de inasistencia sin aviso o falta de pago, se les concederá la confianza de agendar sin ser necesario un anticipo. Sin embargo, a la primera inasistencia o falta de pago perderá este privilegio.</p>
+        <br>
+      </div>
+      <br clear="all"/>
+      <br><br>
+      <p style="text-align:center;"><strong>Todo lo anterior se especifica para poder ofrecer un mejor servicio y lo más importante: un mejor resultado de algo que es irreversible.</strong>
+    </div>
+    {% endblock %}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script>
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#panel").slideToggle("slow");});
+     });
+    </script>
+    {% block extrajs %}
+    {% endblock %}
+  </body>
+</html>
