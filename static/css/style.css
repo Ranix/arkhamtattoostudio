@@ -143,19 +143,20 @@ p.titulo_agendar {font-size:25px;font-weight:bold;color:#fff;font-family: 'Crims
 
 
 #calendario {width:100%;height:auto;}
-#mes {width:99%;height:60px;border:2px solid #fff;}
+#mes {width:96%;height:60px;border:2px solid #fff;}
 .leftcalendario {width:15%;height:60px;float:left;}
 .nombremes {width:70%;text-align:center;float:left;font-size:38px;color:#fff;font-weight:bold;font-family: 'Crimson Text', serif;padding-top:13px;}
 .rightcalendario {width:15%;height:60px;float:right;}
 .flechas {font-size:45px;color:#fff;text-align:center;}
 #semana {width:100%;height:56px;}
-.dia {width:14%;float:left;height:45px;font-size:35px;color:#fff;font-family: 'Crimson Text', serif;font-weight:bold;text-align:center;padding-top:10px;}
-.dia_color {width:14%;float:left;height:70px;}
-.left {border-left:1px solid #fff;border-bottom:1px solid #fff;border-right:1px solid #fff;}
-.border {border-right:1px solid #fff;border-bottom:1px solid #fff;}
+.dia {width:13%;float:left;height:45px;font-size:35px;color:#fff;font-family: 'Crimson Text', serif;font-weight:bold;text-align:center;margin-bottom:-3px;padding-top:10px;}
+.dia_color {width:13%;float:left;height:70px;margin-bottom:-3px;border:1px solid #fff;}
+.left {border:1px solid #fff;}
+.border {border:1px solid #fff;}
 .leftblack {border-left:1px solid #000;border-bottom:1px solid #000;border-right:1px solid #000;}
 .borderblack {border-right:1px solid #000;border-bottom:1px solid #000;}
 .semana {width:100%;height:70px;}
+
 
 .amarillo {background:#e49f39;}
 .verde {background:#3d8028;}
@@ -219,7 +220,6 @@ footer {height:auto;padding-bottom:35px;}
 .container1024 {width:90%;}
 #formaagendar {width:100%;float:none;}
 #derechaagendar {width:100%;float:none;}
-.dia, .dia_color {width:14%;}
 
 #container_irport {width:85%;}
 #logo_inicio{padding-top:105px}
@@ -243,13 +243,13 @@ footer {height:auto;padding-bottom:35px;}
 }
 
 
-@media screen and (max-width:870px){
+@media screen and (max-width:1050px){
 #texto_contacto {float:none;width:100%;}
 #forma_contacto {float:none;width:100%;margin-top:30px;}
 #header_contacto {height:auto;padding-bottom:150px;}
 }
 
-@media screen and (max-width:775px){
+@media screen and (max-width:1075px){
 #zonas img.logocotizar {width:100%;}
 #texto_cotizar {padding-top:15%;}
 
@@ -268,16 +268,12 @@ footer {height:auto;padding-bottom:35px;}
 
 }
 
-@media screen and (max-width:700px){
-.dia, .dia_color {width:14%;}
 
-}
-
-@media screen and (max-width:690px){
+@media screen and (max-width:990px){
 .contdudacoment {width:85%;margin:auto;padding-left:0px;}
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:900px){
 #formulario {width:100%;}
 #zonas {width:100%;}
 #izq_terminos {float:none;width:100%;margin-left:0%;}
@@ -287,19 +283,19 @@ footer {height:auto;padding-bottom:35px;}
 ol {font-size:14px;}
 }
 
-@media screen and (max-width:520px){
+@media screen and (max-width:820px){
 #ubicacion {width:100%;float:none;}
 #horario_contactame {width:100%;margin-left:0px;float:none;margin-top:40px;}
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:1080px){
 .hola {display:block;}
 .bye {display:none;}
 #panel {display:none;width:100%;background:#1a1a1a;}
 #flip {width:30px;height:20px;margin-bottom:0px;margin-left:auto;margin-right:auto;cursor:pointer;padding-bottom:15px;}
 .btnmenu_resp {width:100%;padding-bottom:10px;text-align:center;padding-top:10px;}
 .sep_responsive {width:80%;height:1px;background:#fff;margin:auto;}
-#wrapper_headcotizar {width:80%;padding-top:15%;}
+#wrapper_headcotizar {width:80%;}
 
 #header_agendar {background: url(../images/head_agendar.jpg)no-repeat left bottom;
     background-size: cover;}
@@ -308,24 +304,21 @@ ol {font-size:14px;}
 #irportafolio {height:760px;}
 
 #head_inicio {height:415px;}
-#logo_inicio {width:70%;}
+#logo_inicio {width:36%;}
 #logo_inicio img {width:100%;}
 
 #flechadown {display:none;}
 
 #wrapper_headportafolio {width:100%;}
 
-
+.caja {height:50px;font-size:30px;margin-bottom:10px;}
 }
 
 @media screen and (max-width:460px){
-.dia, .dia_color {width:13.9%;}
+.dia, .dia_color {height:36px;}
 
-#mes {width:100%;}
-.nombremes {font-size:25px;}
-.dia {font-size:25px;height:46px;}
-.semana {height:71px;}
-#semana {height:57px;margin-top:1px;}
+.nombremes {font-size:35px;}
+.semana {height:37px;}
 #recomendaciones p.titulo_info {line-height:25px;}
 
 }
@@ -333,6 +326,10 @@ ol {font-size:14px;}
 @media screen and (max-width:460px){
 
 p.titulo {font-size:30px;}
+}
+@media screen and (max-width:360px){
+.dia, .dia_color {width:12%;}
+#mes {width:91%;}
 }
 
 @media screen and (max-width:320px){

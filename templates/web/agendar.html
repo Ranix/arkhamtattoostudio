@@ -134,7 +134,17 @@
                     {% if days == 0 %}
                       <td class="dia_color gris"></td>
                     {% else %}
-                      <td class="dia_color gris"> {{ days }} </td>
+											{% if occurrences|length <= 3 %}
+												<td class="dia_color verde"> {{ days }} </td>
+											{% endif %}
+											{% if occurrences|length >= 4  %}
+												{% if occurrences|length <= 6  %}
+													<td class="dia_color amarillo"> {{ days }} </td>
+												{% endif %}
+											{% endif %}
+											{% if occurrences|length == 7 %}
+												<td class="dia_color rojo"> {{ days }} </td>
+											{% endif %}
                     {% endif %}
                   {% endfor %}
                 </tr>

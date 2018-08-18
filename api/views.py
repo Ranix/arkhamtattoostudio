@@ -19,12 +19,12 @@ class FreeHours(APIView):
             appointments = []
             for event in events:
                 start_date = datetime.combine(event.dia, event.start)
-                #start_date.astimezone(pytz.utc)
+                start_date = utc.localize(start_date)
                 end_date = datetime.combine(event.dia, event.end)
-                #end_date.astimezone(pytz.utc)
+                end_date = utc.localize(end_date)
                 appointments.append((start_date, end_date))
             year, month,day = date.split('-')
-            work_hours = (datetime(int(year), int(month), int(day), 9, tzinfo=utc),
+            work_hours = (datetime(int(year), int(month), int(day), 11, tzinfo=utc),
                 datetime(int(year), int(month), int(day), 18, tzinfo=utc))
             work_intervals = timedelta(minutes=30)
             slots = sorted([(work_hours[0], work_hours[0])] + appointments + [(work_hours[1], work_hours[1])])
@@ -36,7 +36,7 @@ class FreeHours(APIView):
                     start += work_intervals
             return Response(free_hours)
         else:
-            horas = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00",
+            horas = ["11:00", "11:30", "12:00",
                 "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30",
-                "16:00", "16:30", "17:00", "17:30"]
+                "16:00", "16:30", "17:00", "17:30", "18:00"]
             return Response(horas)
