@@ -15,21 +15,23 @@
   </div>
   <br>
   <div class="row">
-    <table class="table table-hover">
+    <table class="table table-responsive table-hover">
     <thead>
       <tr>
         <th scope="col">Fecha</th>
         <th scope="col">Comienza</th>
         <th scope="col">Termina</th>
         <th scope="col">Cliente</th>
+        <th scope="col">Correo</th>
         <th scope="col">Descripcion</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
       {% if object_list %}
         {% for citas in object_list %}
         <tr>
-          <td>{{ citas.dia|timezone:"America/Ensenada" }}</td>
+          <td>{{ citas.dia }}</td>
           <td>{{ citas.start }}</td>
           <td>{{ citas.end }}</td>
           <td>{{ citas.cliente }}</td>

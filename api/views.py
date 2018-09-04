@@ -14,7 +14,7 @@ class FreeHours(APIView):
         import pytz
         utc=pytz.UTC
         date = kwargs.get('date')
-        events =Appointment.objects.filter(dia=date)
+        events = Appointment.objects.filter(dia=date)
         if events:
             appointments = []
             for event in events:
@@ -23,7 +23,7 @@ class FreeHours(APIView):
                 end_date = datetime.combine(event.dia, event.end)
                 end_date = utc.localize(end_date)
                 appointments.append((start_date, end_date))
-            year, month,day = date.split('-')
+            year, month, day = date.split('-')
             work_hours = (datetime(int(year), int(month), int(day), 11, tzinfo=utc),
                 datetime(int(year), int(month), int(day), 18, tzinfo=utc))
             work_intervals = timedelta(minutes=30)

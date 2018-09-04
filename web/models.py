@@ -14,9 +14,7 @@ zona_option = (
 
 tinta_option = (
     ('Escala grises', 'Escala de grises'),
-    ('Color', 'Color'),
-    ('Costado interior', 'Costado interior'),
-    ('Costado exterior', 'Costado exterior'))
+    ('Color', 'Color'))
 
 posicion_option = (
     ('Frente','FRENTE'),

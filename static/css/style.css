@@ -91,7 +91,7 @@ p.titulo {font-size:36px;	font-family: 'Crimson Text', serif;line-height:36px;fo
 
 #header_cotizar {width:100%;height:348px;background:url(../images/head_cotizacion.png)no-repeat bottom;background-size:cover; position:absolute;}
 #texto_cotizar {width:1024px;margin:auto;height:auto;text-align:left;padding-top:6%}
-#wrapper_headcotizar{width:450px;position:relative;height:348px;}
+#wrapper_headcotizar{width:450px;position:relative;height:auto;}
 
 #formulario_zonas {width:100%;height:auto;padding-top:240px;background:#1a1a1a;}
 #formulario {width:50%;float:left;}

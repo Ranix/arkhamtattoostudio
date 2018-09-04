@@ -96,8 +96,8 @@
 					<p class="caja">{{ form3.cantidad  }}</p>
 					<br>
 					<div id="paypal-button-container"></div>
-          <p class="forma inline">Transferencia bancaria:</p><br>
-          <p class="forma">Datos: Banco BBVA Bancomer<br>No. cuenta: 4152 3131 6484 6433<br>CLABE: 012022001989729901</p>
+          <!-- <p class="forma inline">Transferencia bancaria:</p><br>
+          <p class="forma">Datos: Banco BBVA Bancomer<br>No. cuenta: 4152 3131 6484 6433<br>CLABE: 012022001989729901</p> -->
           <br>
           <div id="atencion">
             <p class="titulo_atencion">ATENCIÓN:</p>
@@ -130,19 +130,19 @@
             <tbody>
               {% for week in month %}
                 <tr class="semana">
-                  {% for days, occurrences in week %}
+                  {% for days, count in week %}
                     {% if days == 0 %}
                       <td class="dia_color gris"></td>
                     {% else %}
-											{% if occurrences|length <= 3 %}
+											{% if count >= 14 %}
 												<td class="dia_color verde"> {{ days }} </td>
 											{% endif %}
-											{% if occurrences|length >= 4  %}
-												{% if occurrences|length <= 6  %}
+											{% if count >= 2  %}
+												{% if count <= 12  %}
 													<td class="dia_color amarillo"> {{ days }} </td>
 												{% endif %}
 											{% endif %}
-											{% if occurrences|length == 7 %}
+											{% if count <= 1 %}
 												<td class="dia_color rojo"> {{ days }} </td>
 											{% endif %}
                     {% endif %}
@@ -178,7 +178,7 @@ $("#id_dia").change(function(){
 	$("#id_start").empty()
 	$("#id_end").empty()
 	$.ajax({
-		url: "http://127.0.0.1:8000/api/freehours/" + dia + "/",
+		url: "http://arkhamtattoostudio.com/api/freehours/" + dia + "/",
 		type: "GET",
 		dataType: "json",
 		success : function(dates){
