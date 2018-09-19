@@ -56,7 +56,7 @@ ROOT_URLCONF = 'arkham_tattoo_studio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-#TIME_ZONE = 'US/Pacific'
+# TIME_ZONE = 'US/Pacific'
 
 USE_I18N = True
 
@@ -116,6 +116,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'arkhamcotizaciones@gmail.com'
+EMAIL_HOST_PASSWORD = 'cotizaciones!'
+
+# Redirect login view
+LOGIN_REDIRECT_URL = 'cotizar_lista'
+LOGIN_URL = 'login'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

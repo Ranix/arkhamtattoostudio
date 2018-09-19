@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.timezone import now
@@ -5,8 +6,10 @@ from django.views.generic import ListView, UpdateView, DeleteView
 
 from web.models import Appointment
 
+
 # Create your views here.
-class AgendarList(ListView):
+# @login_required
+class AgendarList(LoginRequiredMixin, ListView):
     model = Appointment
     template_name = 'admin/agendar_lista.html'
 
@@ -14,7 +17,7 @@ class AgendarList(ListView):
         return Appointment.objects.filter(dia__day=now().day)
 
 
-class AgendarListM(ListView):
+class AgendarListM(LoginRequiredMixin, ListView):
     model = Appointment
     template_name = 'admin/agendar_lista_m.html'
 
@@ -22,7 +25,7 @@ class AgendarListM(ListView):
         return Appointment.objects.filter(dia__month=now().month)
 
 
-class AgendarDelete(DeleteView):
+class AgendarDelete(LoginRequiredMixin, DeleteView):
     model = Appointment
     template_name = 'admin/agendar_delete.html'
     success_url = reverse_lazy('cita_lista_d')

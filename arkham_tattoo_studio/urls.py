@@ -15,28 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib.auth import views as auth_views
 
 from web import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    #Web
+    # Web
     path('', views.home, name='home'),
     path('portafolio', views.portfolio, name='portfolio'),
     path('cotizar', views.CreateQuotation.as_view(), name='quotation'),
     path('agendar', views.CreateAppointment.as_view(), name='appointment'),
     path('contacto', views.contact, name='contact'),
+    path('login', auth_views.LoginView.as_view(), name='login'),
+    path('logout', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
 
-    #Quotation
+    # Quotation
     path('cotizaciones/', include('quotation.urls')),
 
-    #Appointments
+    # Appointments
     path('citas/', include('appointments.urls')),
 
-    #Payments
+    # Payments
     path('pagos/', include('payments.urls')),
 
-    #API
+    # API
     path('api/', include('api.urls')),
 ]

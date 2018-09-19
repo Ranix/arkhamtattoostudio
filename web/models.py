@@ -36,7 +36,7 @@ no_horas_option = (
 
 tipo_pago_option = (
     ('Efectivo','Efectivo en tienda'),
-    ('Transferencia','Transferenci bancaria'),
+    ('Transferencia','Transferencia bancaria'),
     ('Paypal','Paypal'),)
 
 

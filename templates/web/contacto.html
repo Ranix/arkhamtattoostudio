@@ -23,13 +23,14 @@
         <a data-fancybox data-src="#terminos"><div class="boton btnblanco"><p class="btnfooter">TÉRMINOS Y CONDICIONES</p></div></a>
       </div>
       <div id="forma_contacto">
-        <form>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
           <p class="forma">Nombre:</p>
           <input type="text" class="caja">
           <p class="forma">Correo electrónico:</p>
           <input type="text" class="caja">
           <p class="forma">Mensaje:</p>
-          <textarea class="cajatext"></textarea>
+          {{ form.message }}
           <input type="submit" value="Enviar" class="cajacontacto">
         </form>
         <br clear="all"/>

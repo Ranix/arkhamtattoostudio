@@ -1,5 +1,6 @@
 import csv
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils.timezone import now
@@ -7,8 +8,9 @@ from django.views.generic import ListView
 
 from web.models import Payment
 
+
 # Create your views here.
-class AgendarPagos(ListView):
+class AgendarPagos(LoginRequiredMixin, ListView):
     model = Payment
     template_name = 'admin/pagos.html'
 
